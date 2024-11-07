@@ -12,3 +12,7 @@ app.use("/", express.static("./public/font"));
 app.get("*", (req, res)=>{
     res.redirect("/");
 });
+
+const socket = require("socket.io");
+const io = socket(server);
+io.on("connection", (socket)=>{});
