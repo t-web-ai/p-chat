@@ -5,3 +5,15 @@ let onlineCount = document.querySelector(".online-users-count");
 let messageBox = document.querySelector(".message-box");
 let typing = document.querySelector(".typing");
 let msg = document.forms[1].children[0];
+
+document.forms[0].onsubmit = function () {
+    if (username.value.trim()) {
+        promptBox.classList.add("prompt-hide");
+        socket.emit("start", username.value.trim());
+        username.value = "";
+    }
+    return false;
+}
+socket.on("getOnlineUserCount", count=>{
+    onlineCount.innerText = count + " online";
+});
