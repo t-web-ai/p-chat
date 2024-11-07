@@ -34,5 +34,12 @@ io.on("connection", (socket) => {
     });
     socket.on("typing", (username)=>{
         socket.broadcast.emit("typing", username);
+    });
+    socket.on("sendMessage", messageInfo=>{
+        io.emit("sendMessage", {
+            "id": socket.id,
+            "name": messageInfo.name,
+            "message": messageInfo.message
+        });
     })
 });

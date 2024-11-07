@@ -34,3 +34,40 @@ socket.on("typing", (username) => {
         typing.innerText = ``;
     }, 1000);
 });
+
+document.forms[1].onsubmit = function () {
+    if (msg.value.trim()) {
+        socket.emit("sendMessage", {
+            "name": username.value.trim(),
+            "message": msg.value.trim()
+        });
+        msg.value = "";
+    }
+    return false;
+}
+socket.on("sendMessage", messageInfo => {
+    let row = document.createElement("DIV");
+    row.classList.add("row");
+
+    let msgFrame = document.createElement("DIV");
+    let name;
+    if (username.value.trim() == messageInfo.name) {
+        row.classList.add("right");
+        msgFrame.classList.add("msgFrame-you");
+        name = document.createTextNode("You");
+    } else {
+        msgFrame.classList.add("msgFrame-other");
+        name = document.createTextNode(messageInfo.name);
+    }
+    let userName = document.createElement("B");
+    userName.appendChild(name);
+    let userMessage = document.createElement("DIV");
+    let message = document.createTextNode(messageInfo.message);
+    userMessage.appendChild(message);
+    msgFrame.appendChild(userName);
+    msgFrame.appendChild(userMessage);
+    row.appendChild(msgFrame);
+    messageBox.appendChild(row);
+
+    messageBox.scrollTop = messageBox.scrollHeight;
+});
