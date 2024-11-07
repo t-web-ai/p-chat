@@ -118,7 +118,7 @@ html {
     display: flex;
     align-items: center;
     transition: 0.2s;
-    background-color: #619bff7a;
+    background-color: gray;
     color: white;
     padding: 0 10px;
     position: relative;

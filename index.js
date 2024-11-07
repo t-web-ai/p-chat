@@ -31,5 +31,8 @@ io.on("connection", (socket) => {
         });
         onlineUser.splice(userIndex, 1);
         io.emit("getOnlineUserCount", onlineUser.length);
+    });
+    socket.on("typing", (username)=>{
+        socket.broadcast.emit("typing", username);
     })
 });
