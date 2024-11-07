@@ -84,6 +84,7 @@ html {
 /* online user - start */
 .inner-box>.online-users-count {
     flex: 5%;
+    font-size: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,6 +98,7 @@ html {
 /* message box - start */
 .inner-box>.message-box {
     flex: 85%;
+    font-size: 2rem;
     background-color: #eee;
     position: relative;
     overflow: scroll;
@@ -116,6 +118,7 @@ html {
     flex: 0%;
     overflow: hidden;
     display: flex;
+    font-size: 2rem;
     align-items: center;
     transition: 0.2s;
     background-color: gray;
@@ -130,19 +133,23 @@ html {
 .inner-box>.form {
     flex: 10%;
     background-color: gray;
-    position: relative;
+    position: sticky;
+    bottom: 0;
 }
 
 .form>form {
     width: 100%;
     height: 100%;
-    padding: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .form>form>input {
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 5px 10px;
     font-size: 2rem;
     border: none;
     outline: none;
