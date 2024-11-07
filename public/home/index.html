@@ -1,16 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/img/icon.png" type="image/x-icon">
-    <meta property="og:image" content="/img/hand.jpg"/>
+    <meta property="og:image" content="/img/hand.jpg" />
     <title>P Message</title>
     <link rel="stylesheet" href="/index.css">
 </head>
+
 <body>
-    
+    <!-- outer box -start -->
+    <div class="outer-box">
+        <!-- prompt name - start -->
+        <div class="prompt-name">
+            <div>
+                <h3>What's your name?</h3>
+                <form>
+                    <input type="text" placeholder="Text...">
+                </form>
+            </div>
+        </div>
+        <!-- prompt name - end -->
+        <!-- inner box - start -->
+        <div class="inner-box">
+            <!-- online user - start -->
+            <div class="online-users-count">0 online</div>
+            <!-- online user - end -->
+
+            <!-- message box - start -->
+            <div class="message-box">
+                
+            </div>
+            <!-- message box - end -->
+            <!-- typing - start -->
+            <div class="typing">typing</div>
+            <!-- typing - end -->
+            <!-- form - start -->
+            <div class="form">
+                <form>
+                    <input type="text" placeholder="Aa">
+                </form>
+            </div>
+            <!-- form - end -->
+        </div>
+        <!-- inner box - end -->
+    </div>
+    <!-- outer box - end  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.0/socket.io.min.js"></script>
     <script src="/index.js"></script>
 </body>
+
 </html>

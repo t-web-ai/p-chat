@@ -2,12 +2,153 @@
     font-family: ubuntu;
     src: url("/Ubuntu-Regular.ttf");
 }
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 html {
     font-size: 62.5%;
     font-family: ubuntu;
 }
+
+/* outer box - start */
+.outer-box {
+    width: 100%;
+    height: 100vh;
+    background-color: #eee;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+}
+
+.outer-box>div {
+    flex-shrink: 0;
+}
+
+.outer-box::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+/* outer box - end */
+
+/* prompt name - start */
+.prompt-name {
+    width: 100%;
+    height: 100vh;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    border-bottom: 3px solid white;
+    position: relative;
+}
+
+.prompt-hide {
+    margin-left: -100%;
+}
+
+.prompt-name>div {
+    padding: 10px;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+.prompt-name>div>form>input {
+    padding: 5px;
+    font-size: 2rem;
+    outline: none;
+    border: 1px solid black;
+}
+
+/* prompt name - end */
+
+/* inner box - start */
+.inner-box {
+    width: 100%;
+    height: 100vh;
+    background-color: gray;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    position: relative;
+}
+
+/* online user - start */
+.inner-box>.online-users-count {
+    flex: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    position: relative;
+}
+
+/* online user - end */
+
+/* message box - start */
+.inner-box>.message-box {
+    flex: 85%;
+    background-color: #eee;
+    position: relative;
+    overflow: scroll;
+    padding: 5px 20px;
+    transition: 0.2s;
+}
+
+.message-box::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+/* message box - end */
+
+/* typing - start */
+.inner-box>.typing {
+    flex: 0%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    transition: 0.2s;
+    background-color: #619bff7a;
+    color: white;
+    padding: 0 10px;
+    position: relative;
+}
+
+/* typing - end */
+
+/* input form - start */
+.inner-box>.form {
+    flex: 10%;
+    background-color: gray;
+    position: relative;
+}
+
+.form>form {
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+}
+
+.form>form>input {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    font-size: 2rem;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+/* input form - end */
+
+/* inner box - end  */
