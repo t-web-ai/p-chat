@@ -10,7 +10,7 @@ document.forms[0].onsubmit = function () {
     if (username.value.trim()) {
         promptBox.classList.add("prompt-hide");
         socket.emit("start", username.value.trim());
-        username.value = "";
+        username.disabled = "disabled";
     }
     return false;
 }
