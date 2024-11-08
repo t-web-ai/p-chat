@@ -29,13 +29,16 @@ io.on("connection", (socket) => {
         const userIndex = onlineUser.findIndex((v) => {
             return v.id == socket.id;
         });
-        onlineUser.splice(userIndex, 1);
-        io.emit("getOnlineUserCount", onlineUser.length);
+        if (userIndex >= 0) {
+            onlineUser.splice(userIndex, 1);
+            io.emit("getOnlineUserCount", onlineUser.length);
+        }
+
     });
-    socket.on("typing", (username)=>{
+    socket.on("typing", (username) => {
         socket.broadcast.emit("typing", username);
     });
-    socket.on("sendMessage", messageInfo=>{
+    socket.on("sendMessage", messageInfo => {
         io.emit("sendMessage", {
             "id": socket.id,
             "name": messageInfo.name,
